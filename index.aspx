@@ -1,0 +1,404 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="cake_shop.pages.index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petal & Crumb — Handcrafted Cakes & Bakery</title> 
+    <meta name="description" content="Petal & Crumb Bakery — handcrafted cakes, cupcakes and treats baked fresh daily.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍰</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- ===================== NAVBAR ===================== -->
+<header class="navbar">
+  <div class="container nav-inner">
+
+    <a href="index.aspx" class="logo">
+      <span class="logo-mark">🍰</span> Petal & Crumb
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.aspx" class="active">Home</a>
+      <a href="pages/cake.aspx">Cakes</a>
+      <a href="pages/about.aspx">About</a>
+      <a href="pages/contact.aspx">Contact</a>
+      <a href="pages/login.aspx">Login</a>
+      <a href="pages/register.aspx">Register</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="pages/cart.aspx" class="icon-btn" aria-label="View cart">
+        🛍️<span class="cart-count">0</span>
+      </a>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-copy reveal">
+
+      <span class="eyebrow">Freshly baked, daily</span>
+
+      <h1>
+        Baked with love,<br><em>frosted</em> with joy.
+      </h1>
+
+      <p>
+        Handcrafted cakes, cupcakes and desserts made from real butter, real cream and a whole lot of heart — delivered right to your celebration.
+      </p>
+
+      <div class="hero-actions">
+        <a href="pages/cake.aspx" class="btn btn-primary">
+          Order a Cake 🎂
+        </a>
+
+        <a href="pages/about.aspx" class="btn btn-outline">
+          Our Story
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <strong>12+</strong>
+          <span>Years Baking</span>
+        </div>
+
+        <div>
+          <strong>4.9★</strong>
+          <span>Customer Rating</span>
+        </div>
+
+        <div>
+          <strong>8k+</strong>
+          <span>Cakes Delivered</span>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual reveal">
+
+      <div class="hero-blob"></div>
+
+      <img class="hero-img"
+           src="https://images.unsplash.com/photo-1607478900766-efe13248b125?auto=format&fit=crop&w=800&q=80"
+           alt="Decorated birthday cake with candles">
+
+      <div class="badge-float">
+        <span class="dot">🚚</span> Same-day delivery
+      </div>
+
+      <span class="sprinkle"
+            style="top:8%; right:6%; width:14px; height:14px; background:var(--rose); animation-delay:.2s;">
+      </span>
+
+      <span class="sprinkle"
+            style="top:20%; right:22%; width:9px; height:9px; background:var(--gold); animation-delay:1s;">
+      </span>
+
+      <span class="sprinkle"
+            style="bottom:22%; left:0; width:11px; height:11px; background:var(--rose-light); animation-delay:1.6s;">
+      </span>
+
+    </div>
+
+  </div>
+</section>
+
+
+<div class="drip-divider">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+
+    <path d="M0,40 C120,10 240,70 360,40 C480,10 600,70 720,40 C840,10 960,70 1080,40 C1200,10 1320,70 1440,40 L1440,100 L0,100 Z"
+          fill="var(--blush)">
+    </path>
+
+    <circle cx="120" cy="14" r="6" fill="#fff" opacity="0.6"></circle>
+    <circle cx="480" cy="14" r="6" fill="#fff" opacity="0.6"></circle>
+    <circle cx="840" cy="14" r="6" fill="#fff" opacity="0.6"></circle>
+    <circle cx="1200" cy="14" r="6" fill="#fff" opacity="0.6"></circle>
+
+  </svg>
+</div>
+
+
+<!-- ===================== FEATURES ===================== -->
+<section class="features">
+  <div class="container">
+
+    <div class="features-grid">
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">🌾</div>
+        <h4>Fresh Ingredients</h4>
+        <p>
+          Real butter, farm eggs and Belgian chocolate — nothing artificial, ever.
+        </p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎨</div>
+        <h4>Custom Designs</h4>
+        <p>
+          Tell us your theme and we'll hand-pipe it to match your celebration.
+        </p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚴</div>
+        <h4>Fast Delivery</h4>
+        <p>
+          Same-day delivery available across the city, chilled and boxed with care.
+        </p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">💗</div>
+        <h4>Made with Love</h4>
+        <p>
+          Every order is baked fresh to order — never frozen, never rushed.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ===================== CTA BANNER ===================== -->
+<section style="padding-top:0;">
+  <div class="container">
+
+    <div class="cta-banner reveal">
+
+      <div>
+        <h2>Have a celebration coming up?</h2>
+
+        <p>
+          Let us design a custom cake for your birthday, wedding or anniversary — free consultation included.
+        </p>
+      </div>
+
+      <a href="pages/contact.aspx" class="btn btn-primary">
+        Get in Touch
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section>
+  <div class="container">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">Sweet words</span>
+      <h2>What Our Customers Say</h2>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card reveal">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          "The chocolate truffle cake was the best I've ever had — moist, rich and beautifully decorated."
+        </p>
+
+        <div class="testimonial-who">
+          <div class="avatar">RA</div>
+
+          <div>
+            <strong>Riya Agarwal</strong>
+            <span>Ahmedabad</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="testimonial-card reveal">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          "Ordered a custom birthday cake and they nailed the theme perfectly. Delivered right on time!"
+        </p>
+
+        <div class="testimonial-who">
+          <div class="avatar">KP</div>
+
+          <div>
+            <strong>Karan Patel</strong>
+            <span>Rajkot</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="testimonial-card reveal">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          "Our wedding cake was a showstopper. Guests are still talking about it weeks later."
+        </p>
+
+        <div class="testimonial-who">
+          <div class="avatar">SM</div>
+
+          <div>
+            <strong>Sneha Mehta</strong>
+            <span>Surat</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== NEWSLETTER ===================== -->
+<section>
+  <div class="container">
+
+    <div class="newsletter reveal">
+
+      <span class="eyebrow">Stay sweet</span>
+
+      <h2>Get 10% off your first order</h2>
+
+      <p style="color:#8a7a71; margin-top:6px;">
+        Join our list for new flavours, offers and baking tips.
+      </p>
+
+      <form id="newsletterForm">
+
+        <input type="email"
+               placeholder="Enter your email"
+               required>
+
+        <button type="submit" class="btn btn-primary">
+          Subscribe
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-about">
+
+        <a href="index.aspx" class="logo">
+          <span class="logo-mark">🍰</span> Petal & Crumb
+        </a>
+
+        <p>
+          A neighbourhood bakery crafting cakes and desserts with real ingredients and a lot of heart since 2013.
+        </p>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>Explore</h4>
+
+        <ul class="footer-links">
+          <li><a href="index.aspx">Home</a></li>
+          <li><a href="pages/cakes.aspx">Cakes</a></li>
+          <li><a href="pages/about.aspx">About Us</a></li>
+          <li><a href="pages/contact.aspx">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>Account</h4>
+
+        <ul class="footer-links">
+          <li><a href="pages/login.aspx">Login</a></li>
+          <li><a href="pages/register.aspx">Register</a></li>
+          <li><a href="pages/cart.aspx">My Cart</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>Visit Us</h4>
+
+        <ul class="footer-links">
+          <li>📍 12 Bakers Lane, Rajkot, Gujarat</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ hello@petalandcrumb.com</li>
+          <li>🕐 Mon–Sun · 8am – 9pm</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      <span>© 2026 Petal & Crumb Bakery. All rights reserved.</span>
+      <span>Made fresh daily, one layer at a time.</span>
+    </div>
+
+  </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+
+
+    </form>
+</body>
+</html>
+
+
+
+
+

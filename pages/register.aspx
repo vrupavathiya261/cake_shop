@@ -19,7 +19,7 @@
     <a href="../index.html" class="logo"><span class="logo-mark">🍰</span> Petal & Crumb</a>
     <nav class="nav-links">
       <a href="../index.html">Home</a>
-      <a href="cakes.aspx">Cakes</a>
+      <a href="cake.aspx">Cakes</a>
       <a href="about.aspx">About</a>
       <a href="contact.aspx">Contact</a>
       <a href="login.aspx">Login</a>

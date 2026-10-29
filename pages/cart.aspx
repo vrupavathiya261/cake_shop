@@ -190,13 +190,13 @@
         runat="server"
         Text="Continue Shopping"
         CssClass="continue-btn"
-        PostBackUrl="~/pages/cake.aspx" />
+        PostBackUrl="~/pages/cake.aspx" OnClick="btnContinueShopping_Click1" />
 
     <asp:Button ID="btnCheckout"
         runat="server"
         Text="Checkout"
         CssClass="checkout-btn"
-        PostBackUrl="~/pages/checkout.aspx" />
+        PostBackUrl="~/pages/checkout.aspx" OnClick="btnCheckout_Click1" />
 
 </div>
 </div>

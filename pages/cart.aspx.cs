@@ -42,7 +42,7 @@ namespace cake_shop.pages
             con.Open();
         }
 
-       
+
         void fillcartgrid()
         {
             getcon();
@@ -143,20 +143,20 @@ namespace cake_shop.pages
         {
             GridView1.EditIndex = -1;
             fillcartgrid();
-        
-    }
 
-        protected void btnContinueShopping_Click(object sender, EventArgs e)
+        }
+
+        protected void btnContinueShopping_Click1(object sender, EventArgs e)
         {
             Response.Redirect("cake.aspx");
         }
 
-        protected void btnCheckout_Click(object sender, EventArgs e)
+        protected void btnCheckout_Click1(object sender, EventArgs e)
         {
             Response.Redirect("checkout.aspx");
         }
     }
-    }
+}
 
 
 

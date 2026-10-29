@@ -90,10 +90,13 @@ namespace cake_shop.pages
 
                 decimal price = Convert.ToDecimal(cmd.ExecuteScalar());
 
-                cmd = new SqlCommand(
-                    "INSERT INTO Cart_tbl (Cart_Prod_Id, Cart_User_Id, Quantity, Total, Added_Date) VALUES ("
-                    + cakeId + ", " + userId + ", 1, " + price + ", '" + DateTime.Now + "')", con);
+              
+cmd = new SqlCommand(
+    "INSERT INTO Cart_tbl (Cart_Prod_Id, Cart_User_Id, Quantity, Total, Added_Date) VALUES ("
+    + cakeId + ", " + userId + ", 1, " + price + ", GETDATE())", con);
 
+            
+                    
                 cmd.ExecuteNonQuery();
 
                 con.Close();
@@ -105,7 +108,7 @@ namespace cake_shop.pages
         }
     }
     }
-}
+
 
 
 

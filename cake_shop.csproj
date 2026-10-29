@@ -77,10 +77,13 @@
     <Content Include="pages\about.aspx" />
     <Content Include="pages\cake.aspx" />
     <Content Include="pages\cart.aspx" />
+    <Content Include="pages\checkout.aspx" />
     <Content Include="pages\contact.aspx" />
     <Content Include="index.aspx" />
     <Content Include="js\script.js" />
+    <Content Include="pages\dashboard.aspx" />
     <Content Include="pages\login.aspx" />
+    <Content Include="pages\manageorder.aspx" />
     <Content Include="pages\register.aspx" />
     <Content Include="pages\view.aspx" />
     <Content Include="Web.config" />
@@ -115,6 +118,13 @@
     <Compile Include="pages\cart.aspx.designer.cs">
       <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\checkout.aspx.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\checkout.aspx.designer.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,12 +139,26 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\manageorder.aspx.cs">
+      <DependentUpon>manageorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\manageorder.aspx.designer.cs">
+      <DependentUpon>manageorder.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>

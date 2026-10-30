@@ -33,53 +33,78 @@ namespace cake_shop.pages
             con.Open();
         }
 
-        void fillordergrid()
+     //   void fillordergrid()
+     //   {
+     //       getcon();
+
+            
+
+     //       string q = @"SELECT 
+     //    o.order_Id AS Order_Id, 
+     //    o.order_user_id AS Id, 
+     //    p.cakename, 
+     //    c.quantity AS Quantity, 
+     //    (p.price * c.Quantity) AS grand_total,
+     //    o.order_Date AS Added_Date, 
+     //    o.grand_total AS Total, 
+     //    o.payment_method, 
+     //    o.payment_status
+     //FROM order_tbl o
+     //INNER JOIN cake_tbl u ON o.order_user_id = u.Id
+     //LEFT JOIN Cart_tbl c ON o.order_user_id = c.Cart_User_Id
+     //LEFT JOIN cakes_tbl p ON c.Cart_prod_Id = p.Id
+     //GROUP BY
+     //    o.order_Id,
+     //    o.order_user_id,
+     //    p.cakename,
+     //    c.quantity,
+     //    p.price,
+     //    o.order_Date,
+     //    o.grand_total,
+     //    o.payment_method,
+     //    o.payment_status
+     //ORDER BY o.order_Date DESC, o.order_Id DESC"; 
+     //       da = new SqlDataAdapter(q, con);
+
+     //       ds = new DataSet();
+     //       da.Fill(ds);
+
+     //       GridView1.DataSource = ds;
+     //       GridView1.DataBind();
+
+     //       con.Close();
+     //   }
+     
+void fillordergrid()
         {
             getcon();
 
-            //string q = @"SELECT 
-            //        o.order_id AS Order_Id, 
-            //        o.order_user_id AS Id, 
-            //        p.Product_Name, 
-            //        c.quantity AS Quantity, 
-            //        (p.price * c.Quantity) AS order_total_amount,
-            //        o.order_Date AS Added_Date, 
-            //        o.order_total_amount AS Total, 
-            //        o.order_payment_method, 
-            //        o.order_payment_status
-            //    FROM order_tbl o
-            //    INNER JOIN cake_tbl u ON o.order_user_id = u.Id
-            //    LEFT JOIN Cart_tbl c ON o.order_user_id = c.Cart_User_Id
-            //    LEFT JOIN cakes_tbl p ON c.Cart_prod_Id = p.Id
-            //    ORDER BY o.order_Date DESC, o.order_id DESC";
-
-            
-string q = @"SELECT 
-         o.Id AS Order_Id, 
-         o.order_user_id AS Id, 
-         p.cakename, 
-         c.quantity AS Quantity, 
-         (p.price * c.Quantity) AS grand_total,
-         o.order_Date AS Added_Date, 
-         o.grand_total AS Total, 
-         o.payment_method, 
-         o.payment_status
-     FROM order_tbl o
-     INNER JOIN cake_tbl u ON o.order_user_id = u.Id
-     LEFT JOIN Cart_tbl c ON o.order_user_id = c.Cart_User_Id
-     LEFT JOIN cakes_tbl p ON c.Cart_prod_Id = p.Id
-     ORDER BY o.order_Date DESC, o.Id DESC";
+            string q = @"SELECT 
+        o.order_Id AS Order_Id, 
+        o.order_user_id AS Id, 
+        ISNULL(p.cakename, 'Cake') AS cakename, 
+        ISNULL(c.quantity, 0) AS Quantity, 
+        ISNULL(c.Total, 0) AS grand_total,
+        o.order_Date AS Added_Date, 
+        ISNULL(o.grand_total, 0) AS Total, 
+        o.payment_method, 
+        o.payment_status
+    FROM order_tbl o
+    INNER JOIN cake_tbl u ON o.order_user_id = u.Id
+    LEFT JOIN Cart_tbl c ON o.order_user_id = c.Cart_User_Id
+    LEFT JOIN cakes_tbl p ON c.Cart_prod_Id = p.Id
+    ORDER BY o.order_Date DESC, o.order_Id DESC";
 
             da = new SqlDataAdapter(q, con);
+
             ds = new DataSet();
             da.Fill(ds);
 
-            GridView1.DataSource = ds;
+            GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
 
             con.Close();
         }
-
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -124,7 +149,7 @@ string q = @"SELECT
 
                 getcon();
 
-                cmd = new SqlCommand("UPDATE order_tbl SET order_payment_status='" + status + "' WHERE order_id='" + orderId + "'", con);
+                cmd = new SqlCommand("UPDATE order_tbl SET payment_status='" + status + "' WHERE order_id='" + orderId + "'", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -143,7 +168,7 @@ string q = @"SELECT
 
             getcon();
 
-            cmd = new SqlCommand("UPDATE order_tbl SET order_payment_status='" + status + "' WHERE order_id='" + orderId + "'", con);
+            cmd = new SqlCommand("UPDATE order_tbl SET payment_status='" + status + "' WHERE order_id='" + orderId + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -151,7 +176,13 @@ string q = @"SELECT
             fillordergrid();
         }
 
-       
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("adminlogin.aspx");
+        }
     }
 }
     

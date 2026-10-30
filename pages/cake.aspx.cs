@@ -15,7 +15,7 @@ namespace cake_shop.pages
         SqlCommand cmd;
         SqlDataAdapter da;
         DataSet ds;
-        string connString = ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
+        string s= ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace cake_shop.pages
 
         void fillcake()
         {
-            SqlConnection con = new SqlConnection(connString);
+            SqlConnection con = new SqlConnection(s);
             con.Open();
 
             string query = "select * from cakes_tbl";
@@ -50,7 +50,7 @@ namespace cake_shop.pages
 
             string category = btn.CommandArgument;
 
-            SqlConnection con = new SqlConnection(connString);
+            SqlConnection con = new SqlConnection(s);
             con.Open();
 
             string query = "select * from cakes_tbl where category='" + category + "'";
@@ -82,7 +82,7 @@ namespace cake_shop.pages
                 int cakeId = Convert.ToInt32(e.CommandArgument);
                 int userId = Convert.ToInt32(Session["uid"]);
 
-                SqlConnection con = new SqlConnection(connString);
+                SqlConnection con = new SqlConnection(s);
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand(

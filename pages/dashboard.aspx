@@ -393,7 +393,13 @@
             <a href="manageorder.aspx">Manage Order</a>
             <a href="manageuser.aspx">Manage User</a>
             <a href="addcake.aspx">Add Cake</a>
-            <a href="logout.aspx" class="logout">Logout</a>
+            
+<asp:LinkButton ID="lnkLogout" runat="server"
+    OnClick="lnkLogout_Click">
+    Logout
+</asp:LinkButton>
+
+          
         </nav>
 
     </header>

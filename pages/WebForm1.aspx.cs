@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace cake_shop
+namespace cake_shop.pages
 {
     public partial class WebForm1 : System.Web.UI.Page
     {

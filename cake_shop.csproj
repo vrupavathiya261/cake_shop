@@ -120,11 +120,13 @@
       <DependentUpon>cake_db.mdf</DependentUpon>
     </Content>
     <Content Include="css\style.css" />
+    <Content Include="customerreport.aspx" />
     <Content Include="pages\adminlogin.aspx" />
     <Content Include="pages\addcake.aspx" />
     <Content Include="images\README.txt" />
     <Content Include="pages\about.aspx" />
     <Content Include="pages\cake.aspx" />
+    <Content Include="pages\cakereport.aspx" />
     <Content Include="pages\cart.aspx" />
     <Content Include="pages\checkout.aspx" />
     <Content Include="pages\contact.aspx" />
@@ -134,12 +136,26 @@
     <Content Include="pages\login.aspx" />
     <Content Include="pages\manageorder.aspx" />
     <Content Include="pages\manageuser.aspx" />
+    <Content Include="pages\orderreport.aspx" />
     <Content Include="pages\register.aspx" />
     <Content Include="pages\view.aspx" />
     <Content Include="pages\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="customerreport.aspx.cs">
+      <DependentUpon>customerreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerreport.aspx.designer.cs">
+      <DependentUpon>customerreport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\adminlogin.aspx.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +183,19 @@
     </Compile>
     <Compile Include="pages\cake.aspx.designer.cs">
       <DependentUpon>cake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\cakereport.aspx.cs">
+      <DependentUpon>cakereport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\cakereport.aspx.designer.cs">
+      <DependentUpon>cakereport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\cakes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cakes.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="pages\cart.aspx.cs">
       <DependentUpon>cart.aspx</DependentUpon>
@@ -224,6 +253,13 @@
     <Compile Include="pages\manageuser.aspx.designer.cs">
       <DependentUpon>manageuser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\orderreport.aspx.cs">
+      <DependentUpon>orderreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\orderreport.aspx.designer.cs">
+      <DependentUpon>orderreport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,6 +303,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="cakeimges\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="customer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>customer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\cakes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cakes.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

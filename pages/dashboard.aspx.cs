@@ -54,7 +54,16 @@ namespace cake_shop.pages
                 cmd = new SqlCommand("SELECT COUNT(*) FROM cake_tbl", con);
                 lblUsers.Text = cmd.ExecuteScalar().ToString();
 
-                con.Close();
+            cmd = new SqlCommand("SELECT SUM(CAST(grand_total AS DECIMAL(18,2))) FROM order_tbl", con);
+            lblRevenue.Text = Convert.ToDecimal(cmd.ExecuteScalar()).ToString("0.##");
+
+
+
+
+            decimal revenue = Convert.ToDecimal(cmd.ExecuteScalar());
+
+            lblRevenue.Text = "₹ " + revenue.ToString("N2");
+            con.Close();
         }
 
 

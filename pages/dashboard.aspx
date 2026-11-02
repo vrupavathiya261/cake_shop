@@ -458,7 +458,7 @@
                     <div class="stat-icon">&#8377;</div>
                 </div>
                 <div class="stat-number">
-                    &#8377;<asp:Label ID="lblRevenue" runat="server" Text="0"></asp:Label>
+                    <asp:Label ID="lblRevenue" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="stat-note">Total sales amount</div>
             </div>

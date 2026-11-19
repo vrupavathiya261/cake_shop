@@ -128,6 +128,7 @@
     <Content Include="pages\cake.aspx" />
     <Content Include="pages\cakereport.aspx" />
     <Content Include="pages\cart.aspx" />
+    <Content Include="pages\categoriesreport.aspx" />
     <Content Include="pages\checkout.aspx" />
     <Content Include="pages\contact.aspx" />
     <Content Include="index.aspx" />
@@ -137,6 +138,7 @@
     <Content Include="pages\manageorder.aspx" />
     <Content Include="pages\manageuser.aspx" />
     <Content Include="pages\orderreport.aspx" />
+    <Content Include="pages\payment.aspx" />
     <Content Include="pages\register.aspx" />
     <Content Include="pages\view.aspx" />
     <Content Include="pages\WebForm1.aspx" />
@@ -204,6 +206,19 @@
     <Compile Include="pages\cart.aspx.designer.cs">
       <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\categories.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>categories.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="pages\categoriesreport.aspx.cs">
+      <DependentUpon>categoriesreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\categoriesreport.aspx.designer.cs">
+      <DependentUpon>categoriesreport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\checkout.aspx.cs">
       <DependentUpon>checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,12 +268,31 @@
     <Compile Include="pages\manageuser.aspx.designer.cs">
       <DependentUpon>manageuser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\order.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>order.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="pages\orderreport.aspx.cs">
       <DependentUpon>orderreport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\orderreport.aspx.designer.cs">
       <DependentUpon>orderreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\paymentreport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>paymentreport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="pages\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -315,6 +349,18 @@
     <EmbeddedResource Include="pages\cakes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>cakes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\categories.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>categories.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\order.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>order.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\paymentreport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>paymentreport.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

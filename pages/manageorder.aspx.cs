@@ -128,31 +128,50 @@ void fillordergrid()
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            //    GridViewRow row = GridView1.Rows[e.RowIndex];
+            //    Label lblOrderId = (Label)row.FindControl("Label1");
+            //    DropDownList ddlStatus = (DropDownList)row.FindControl("DropDownList1");
+
+            //    string orderId = "";
+
+            //    if (lblOrderId != null)
+            //    {
+            //        orderId = lblOrderId.Text.Trim();
+            //    }
+            //    else if (GridView1.DataKeys.Count > 0 && GridView1.DataKeys[e.RowIndex].Value != null)
+            //    {
+            //        orderId = GridView1.DataKeys[e.RowIndex].Value.ToString();
+            //    }
+
+            //    if (!string.IsNullOrEmpty(orderId) && ddlStatus != null)
+            //    {
+            //        string status = ddlStatus.SelectedValue;
+
+            //        getcon();
+
+            //        cmd = new SqlCommand("UPDATE order_tbl SET payment_status='" + status + "' WHERE order_id='" + orderId + "'", con);
+            //        cmd.ExecuteNonQuery();
+            //        con.Close();
+            //    }
+
+            //    GridView1.EditIndex = -1;
+            //    fillordergrid();
+            //}
             GridViewRow row = GridView1.Rows[e.RowIndex];
-            Label lblOrderId = (Label)row.FindControl("Label1");
+
+            string orderId = GridView1.DataKeys[e.RowIndex].Value.ToString();
+
             DropDownList ddlStatus = (DropDownList)row.FindControl("DropDownList1");
 
-            string orderId = "";
+            string status = ddlStatus.SelectedValue;
 
-            if (lblOrderId != null)
-            {
-                orderId = lblOrderId.Text.Trim();
-            }
-            else if (GridView1.DataKeys.Count > 0 && GridView1.DataKeys[e.RowIndex].Value != null)
-            {
-                orderId = GridView1.DataKeys[e.RowIndex].Value.ToString();
-            }
+            getcon();
 
-            if (!string.IsNullOrEmpty(orderId) && ddlStatus != null)
-            {
-                string status = ddlStatus.SelectedValue;
+            cmd = new SqlCommand("UPDATE order_tbl SET payment_status='" + status + "' WHERE order_id='" + orderId + "'", con);
 
-                getcon();
+            cmd.ExecuteNonQuery();
 
-                cmd = new SqlCommand("UPDATE order_tbl SET payment_status='" + status + "' WHERE order_id='" + orderId + "'", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+            con.Close();
 
             GridView1.EditIndex = -1;
             fillordergrid();

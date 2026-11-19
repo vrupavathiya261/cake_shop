@@ -380,6 +380,57 @@
                 font-size: 17px;
             }
         }
+        
+/* Report Buttons Container */
+.report-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(180, 90, 125, 0.10);
+}
+
+/* All Report Buttons */
+.report-buttons input[type="submit"],
+.report-buttons input[type="button"] {
+    background: linear-gradient(135deg, #e879a5, #f5a6c5);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    min-width: 170px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(218, 112, 147, 0.20);
+}
+
+/* Hover Effect */
+.report-buttons input:hover {
+    background: #d9578b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(218, 112, 147, 0.30);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .report-buttons {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .report-buttons input {
+        width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -464,6 +515,31 @@
             </div>
 
         </section>
+        
+<div class="report-buttons">
+
+    <asp:Button ID="btnCake" runat="server"
+        Text="Cake Report"
+        OnClick="btnCake_Click" />
+
+    <asp:Button ID="btnCustomer" runat="server"
+        Text="Customer Report"
+        OnClick="btnCustomer_Click" />
+
+    <asp:Button ID="btnOrder" runat="server"
+        Text="Order Report"
+        OnClick="btnOrder_Click" />
+
+    <asp:Button ID="btnPayment" runat="server"
+        Text="Payment Report"
+        OnClick="btnPayment_Click" />
+
+    <asp:Button ID="btnCat" runat="server"
+        Text="Categories Report"
+        OnClick="btnCat_Click" />
+
+</div>
+
 
         <section class="main-content">
 

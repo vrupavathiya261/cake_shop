@@ -42,20 +42,23 @@ namespace cake_shop.pages
           
               
 
-                // Total Orders
+                
                 cmd = new SqlCommand("SELECT COUNT(*) FROM order_tbl", con);
                 lblOrders.Text = cmd.ExecuteScalar().ToString();
 
-                // Total Cakes
+                
                 cmd = new SqlCommand("SELECT COUNT(*) FROM cakes_tbl", con);
                 lblCakes.Text = cmd.ExecuteScalar().ToString();
 
-                // Total Users
+                
                 cmd = new SqlCommand("SELECT COUNT(*) FROM cake_tbl", con);
                 lblUsers.Text = cmd.ExecuteScalar().ToString();
 
+            //cmd = new SqlCommand("SELECT SUM(grand_total) FROM order_tbl", con);
+            //lblRevenue.Text = cmd.ExecuteScalar().ToString();
+
             cmd = new SqlCommand("SELECT SUM(CAST(grand_total AS DECIMAL(18,2))) FROM order_tbl", con);
-            lblRevenue.Text = Convert.ToDecimal(cmd.ExecuteScalar()).ToString("0.##");
+                lblRevenue.Text = Convert.ToDecimal(cmd.ExecuteScalar()).ToString("0.##");
 
 
 
@@ -99,6 +102,32 @@ namespace cake_shop.pages
             Session.Clear();
             Session.Abandon();
             Response.Redirect("adminlogin.aspx");
+        }
+
+        protected void btnCake_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cakereport.aspx");
+        }
+
+        protected void btnCustomer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/customerreport.aspx");
+        }
+
+        protected void btnOrder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("orderreport.aspx");
+        }
+
+        protected void btnPayment_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("payment.aspx");
+        }
+        
+
+        protected void btnCat_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("categoriesreport.aspx");
         }
     }
 }
